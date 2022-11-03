@@ -1,44 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-    <div class="main_div">
-        <!-- <h1>TESTTTT</h1> -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <div class="main_div">
+            <!-- <h1>TESTTTT</h1> -->
 
-        <!-- <h1>CSS Dropdown Menu</h1> -->
-        <div class="wrapper">
-            <a class="btn" href="#"><span class="btn2">Go!</span></a>
-          </div> 
-          <div>
-<nav>
-
-  <label for="touch"><span class="dropdown">Who's Down?</span></label>               
-  <input type="checkbox" id="touch"> 
-
-  <ul class="slide">
-    <li class="options"><a href="#">Just me :(</a></li> 
-    <li class="options"><a href="#">Me and my bestie</a></li>
-    <li class="options"><a href="#">I'm 3rd wheeling</a></li>
-    <li class="options"><a href="#">Double Date</a></li>
-  </ul>
-
-</nav> 
-          
-          <svg>
-            <filter id="goo">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-              <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-              <feBlend in="SourceGraphic" in2="goo" />
-            </filter>
-          </svg>
-        </div> 
-    </div>
-    <script src='./main.js'></script>
-</body>
+            <!-- <h1>CSS Dropdown Menu</h1> -->
+            <div class="button">
+                <button class="button-16" id="btn" onclick="processMsg()">
+                    Go!
+                </button>
+                <div>
+                    <div class="box">
+                        <select id="list">
+                            <option>I'm a loner</option>
+                            <option>Me and my bestie</option>
+                            <option>I'm third wheeling</option>
+                            <option>Double date</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./main.js"></script>
+    </body>
 </html>

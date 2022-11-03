@@ -1,97 +1,78 @@
-body {background-color : #ededed; font-family : "Open Sans", sans-serif;}
-
-h1 {padding: 40px; text-align: center; font-size: 1.5em;}
-
-.options a {text-decoration : none; color : #2d2f31;}
-
-
-nav {
-  width : 300px; 
-  background: #d9d9d9;
-  margin : 40px auto; 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #004882;
+    min-width: 600px;
+    min-height: 500px;
 }
 
-.dropdown {
-  padding : 30px;
-  background : #2d2f31; 
-  color : white;
-  font-size : 1.2em;
-  font-variant : small-caps;
-  cursor : pointer;
-  display: block;
-}
-
-.dropdown::after {
-  float: right;
-  right: 10%;
-  content: "+";
-}
-
-.slide {
-  clear:both;
-  width:100%;
-  height:0px;
-  overflow: hidden;
-  text-align: center;
-  transition: height .4s ease;
-}
-
-.slide li {padding : 30px;}
-
-#touch {position: absolute; opacity: 0; height: 0px;}    
-
-#touch:checked + .slide {height: 300px;} 
-
-
-.wrapper{
-    position: fixed;
+.box {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-  
-  .btn{
-    display: block;
-    width: 200px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 18px;
-    font-family: sans-serif;
-    text-decoration: none;
-    color: #333;
-    border: 2px solid #333;
-    letter-spacing: 2px;
-    text-align: center;
-    position: relative;
-    transition: all .35s;
-  }
-  
-  .btn .btn2{
-    position: relative;
-    z-index: 2;
-  }
-  
-  .btn:after{
+}
+
+.box select {
+    background-color: #0563af;
+    color: white;
+    padding: 12px;
+    width: 250px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+}
+
+.box::before {
+    content: "\f13a";
+    font-family: FontAwesome;
     position: absolute;
-    content: "";
     top: 0;
-    left: 0;
-    width: 0;
+    right: 0;
+    width: 20%;
     height: 100%;
-    background: #ff003b;
-    transition: all .35s;
-  }
-  
-  .btn:hover{
-    color: #fff;
-  }
-  
-  .btn:hover:after{
-    width: 100%;
-  }
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
 
-  .main_div {
-    display: flex;
-    flex-direction: row;
+.box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+}
 
-  }
+.button-16 {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    cursor: pointer;
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    height: 36px;
+    line-height: 27px;
+    min-width: 54px;
+    padding: 0 16px;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: pre;
+}
+
+.button-16:hover {
+    border-color: #dadce0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px;
+    color: #202124;
+}
+
+.button-16:focus {
+    border-color: #4285f4;
+    outline: none;
+}
