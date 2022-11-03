@@ -8,22 +8,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     // console.log('hello')
 });
 
-async function testFetch() {
-    const response = await fetch(
-        `http://www.boredapi.com/api/activity?participants=1`
-    ).then((response) => response.json());
-    // console.log(response);
-    // console.log("hello");
-}
-const test = document.querySelector(".slide");
-console.log(test);
+// async function testFetch() {
+//     const response = await fetch(
+//         `http://www.boredapi.com/api/activity?participants=1`
+//     ).then((response) => response.json());
+//     // console.log(response);
+//     // console.log("hello");
+// }
 
-testFetch();
-
-function getSelectedVal() {
-    let values = document.getElementById("list").value;
-    console.log(values);
-}
 
 const number = {
     1: "I'm a loner",
@@ -31,18 +23,33 @@ const number = {
     3: "I'm third wheeling",
     4: "Double date",
 };
+let button1 = document.getElementById("btn")
+button1.addEventListener("click", processMsg);
+
 async function processMsg() {
-    let values = document.getElementById("list").value;
+    let input = document.getElementById("list").value;
     let participant;
     for (let key in number) {
-        if (number[key] === values) {
-            participant = key;
+        if (number[key] === input) {
+            participant = Number(key);
         }
     }
+
     const response = await fetch(
         `http://www.boredapi.com/api/activity?participants=${participant}`
     ).then((response) => response.json());
     console.log(response);
+    const price = document.createElement("p");
+    const acesss = document.createElement("p");
+    const theMsg = document.querySelector(".text_input")
+    const activity = document.createElement("p");
+    theMsg.appendChild(price);
+    theMsg.appendChild(acesss);
+    
+    
+    theMsg.innerHTML = response["activity"];
+    price.innerHTML = response["price"];
+    acesss.innerHTML = response["accessibility"];
 }
 // getSelectedVal();
 // (accessibility
@@ -54,15 +61,3 @@ async function processMsg() {
 // key
 // :
 // "7806284"
-// link
-// :
-// ""
-// participants
-// :
-// 1
-// price
-// :
-// 0
-// type
-// :
-// "recreational")
