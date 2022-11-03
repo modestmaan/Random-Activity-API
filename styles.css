@@ -4,7 +4,7 @@ body {
     background-color: white;
     padding-top: -10px;
     min-width: 300px;
-    min-height: 400px;
+    min-height: 100px;
     /* font-family: FontAwesome; */
 }
 
@@ -125,9 +125,9 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    justify-content: left;
-    align-items: left;
-    align-content: left;
+    justify-content: flex-start;
+    /* align-items: left;
+    align-content: left; */
     /* min-width: 0px; */
     max-width: 300px;
     min-height: 150px;

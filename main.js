@@ -38,18 +38,32 @@ async function processMsg() {
         `http://www.boredapi.com/api/activity?participants=${participant}`
     ).then((response) => response.json());
     console.log(response);
+
+    const divEl1 = document.createElement("div");
+    const divEl2 = document.createElement("div");
+    const divEl3 = document.createElement("div");
+
+    divEl1.className = "linebreak";
+    divEl2.className = "linebreak";
+    divEl3.className = "linebreak";
+
+
+    
     const theMsg = document.querySelector(".text_input1");
+    const divEls = document.querySelector("linebreak");
     const price = document.querySelector(".text_input2");
     const access = document.querySelector(".text_input3");
-    const type = document.querySelector(".text_input4");\
-    const linebreak = document.querySelector('.linebreak')
+    const type = document.querySelector(".text_input4");
+
 
     if (response["price"] >= 0.7) {
         price.innerHTML = "Price: " + "💰💰💰";
-
     } else if (response["price"] >= 0.4) {
         price.innerHTML = "Price: " + "💰💰";
     } else if (response["price"] >= 0.1) {
+        price.innerHTML = "Price: " + "💰";
+    }
+    else {
         price.innerHTML = "Price: " + "💰";
     }
 
@@ -60,10 +74,13 @@ async function processMsg() {
     } else if (response["accessibility"] >= 0.1) {
         access.innerHTML = "Accessibility: " + "♿️";
     }
+    else {
+        access.innerHTML = "Accessibility: " + "♿️";
+    }
 
-    type.innerHTML = "Type: " + response["type"];
+    type.innerHTML = response["type"].toUpperCase();
     theMsg.innerHTML = response["activity"];
-    linebreak.
+    // linebreak.
 }
 // getSelectedVal();
 // (accessibility
