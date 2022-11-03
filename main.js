@@ -16,14 +16,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 //     // console.log("hello");
 // }
 
-
 const number = {
     1: "I'm a loner",
     2: "Me and my bestie",
     3: "I'm third wheeling",
     4: "Double date",
 };
-let button1 = document.getElementById("btn")
+let button1 = document.getElementById("btn");
 button1.addEventListener("click", processMsg);
 
 async function processMsg() {
@@ -39,17 +38,32 @@ async function processMsg() {
         `http://www.boredapi.com/api/activity?participants=${participant}`
     ).then((response) => response.json());
     console.log(response);
-    const price = document.createElement("p");
-    const acesss = document.createElement("p");
-    const theMsg = document.querySelector(".text_input")
-    const activity = document.createElement("p");
-    theMsg.appendChild(price);
-    theMsg.appendChild(acesss);
-    
-    
+    const theMsg = document.querySelector(".text_input1");
+    const price = document.querySelector(".text_input2");
+    const access = document.querySelector(".text_input3");
+    const type = document.querySelector(".text_input4");\
+    const linebreak = document.querySelector('.linebreak')
+
+    if (response["price"] >= 0.7) {
+        price.innerHTML = "Price: " + "💰💰💰";
+
+    } else if (response["price"] >= 0.4) {
+        price.innerHTML = "Price: " + "💰💰";
+    } else if (response["price"] >= 0.1) {
+        price.innerHTML = "Price: " + "💰";
+    }
+
+    if (response["accessibility"] >= 0.7) {
+        access.innerHTML = "Accessibility: " + "♿️ ♿️ ♿️";
+    } else if (response["accessibility"] >= 0.4) {
+        access.innerHTML = "Accessibility: " + "♿️ ♿️";
+    } else if (response["accessibility"] >= 0.1) {
+        access.innerHTML = "Accessibility: " + "♿️";
+    }
+
+    type.innerHTML = "Type: " + response["type"];
     theMsg.innerHTML = response["activity"];
-    price.innerHTML = response["price"];
-    acesss.innerHTML = response["accessibility"];
+    linebreak.
 }
 // getSelectedVal();
 // (accessibility
